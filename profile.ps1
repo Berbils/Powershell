@@ -14,7 +14,7 @@ $u = Read-Host "What PC?"
 Set-Service -name RemoteRegistry -ComputerName $u -Status Running}
 
 Function Connect-Exchange # Connects to Exchange
-{$session = New-PSSession -ConfigurationName Microsoft.Exchange -ConnectionURI http://LaCapSvr31/powershell/ -Authentication kerberos -Credential (Get-Credential)
+{$session = New-PSSession -ConfigurationName Microsoft.Exchange -ConnectionURI http://<server>/powershell/ -Authentication kerberos -Credential (Get-Credential)
 import-PSSession $session}
 
 Function Find-Account # Queries AD for SamID and Name fields
